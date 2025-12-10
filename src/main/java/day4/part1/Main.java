@@ -38,7 +38,7 @@ public class Main {
                     var spotAddress = adjacentSpotAddresses[i];
                     try {
                         spot.adjacentSpots[i] = spots.get(spotAddress[0]).get(spotAddress[1]);
-                    } catch (IndexOutOfBoundsException _) {
+                    } catch (IndexOutOfBoundsException e) {
                     }
                 }
             }

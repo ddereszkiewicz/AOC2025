@@ -65,17 +65,17 @@ class SubsequentLayer implements Layer {
             var beamHitSpot = layer.get(index);
             if (beamHitSpot.equals("^")) {
                 if(newTimelines.containsKey(index - 1)) {
-                    newTimelines.compute(index - 1, (_, value) -> value + timelinesLeadingToThis);
+                    newTimelines.compute(index - 1, (x, value) -> value + timelinesLeadingToThis);
                 }
                 else newTimelines.put(index - 1, timelinesLeadingToThis);
                 if(newTimelines.containsKey(index + 1)) {
-                    newTimelines.compute(index + 1, (_, value) -> value + timelinesLeadingToThis);
+                    newTimelines.compute(index + 1, (x, value) -> value + timelinesLeadingToThis);
                 }
                 else newTimelines.put(index + 1, timelinesLeadingToThis);
             }
             else {
                 if(newTimelines.containsKey(index)) {
-                    newTimelines.compute(index, (_, value) -> value + timelinesLeadingToThis);
+                    newTimelines.compute(index, (x, value) -> value + timelinesLeadingToThis);
                 }
                 else newTimelines.put(index, timelinesLeadingToThis);
             }
