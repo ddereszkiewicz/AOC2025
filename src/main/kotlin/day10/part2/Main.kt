@@ -1,4 +1,4 @@
-package part2
+package day10.part2
 
 import utils.Utils
 
